@@ -1,0 +1,8 @@
+grok {
+  type => "otherapp"
+  pattern => [ "%{MYPATTERN}" ]
+}
+json {
+  type => "otherapp"
+  "jsondata" => "json"
+}

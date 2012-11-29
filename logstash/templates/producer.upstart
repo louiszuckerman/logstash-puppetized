@@ -1,0 +1,12 @@
+description     "Logstash producer"
+
+start on runlevel [2345]
+stop on runlevel [016]
+
+respawn
+
+script
+    cd /opt/logstash
+    export HOME=/opt/logstash
+    /usr/bin/java -Xms32m -Xmx64m -jar /opt/logstash/logstash.jar agent -f /opt/logstash/producer.conf -l /opt/logstash/logs/producer.log
+end script

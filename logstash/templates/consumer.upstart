@@ -1,0 +1,12 @@
+description     "Logstash consumer"
+
+start on runlevel [2345]
+stop on runlevel [016]
+
+respawn
+
+script
+    cd /opt/logstash
+    export HOME=/opt/logstash
+    su nobody -c "nice -n 19 /usr/bin/java -Xms256m -Xmx1024m -jar /opt/logstash/logstash.jar agent -f /opt/logstash/consumer.conf -l /opt/logstash/logs/consumer.log -- web -b elasticsearch:///?local"
+end script

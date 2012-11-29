@@ -1,0 +1,8 @@
+/opt/logstash/logs/*.log {
+        daily
+        rotate 31
+        compress
+        compresscmd /bin/bzip2
+        compressext .bz2
+        copytruncate
+}

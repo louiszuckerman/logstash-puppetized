@@ -1,0 +1,4 @@
+file {
+  path => "/var/log/otherapp/*.log
+  type => "otherapp"
+}

@@ -1,0 +1,2 @@
+nobody hard nofile 64000
+nobody soft nofile 64000
